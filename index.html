@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Bridge Core Consulting Corp IT Consulting | UK · US · Canada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0B1726;--ink-mid:#152238;--electric:#2563EB;--electric-lt:#3B82F6;--amber:#F59E0B;--amber-lt:#FCD34D;--smoke:#F1F5FB;--muted:#64748B;--white:#FFFFFF;--text:#1E293B;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(11,23,38,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(37,99,235,0.2);height:64px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-wordmark .w1{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#fff;letter-spacing:0.04em;display:block;}
+.nav-wordmark .w2{font-size:0.6rem;color:#3B82F6;letter-spacing:0.18em;text-transform:uppercase;margin-top:1px;display:block;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.04em;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:#F59E0B;}
+.nav-cta{background:var(--electric);color:#fff;padding:9px 22px;text-decoration:none;font-size:0.8rem;font-weight:500;border-radius:4px;transition:background 0.2s;}
+.nav-cta:hover{background:#3B82F6;}
+
+/* HERO two-column compact layout */
+.hero{background:var(--ink);padding:100px 5% 72px;position:relative;overflow:hidden;}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-bg-geo{position:absolute;top:0;right:0;bottom:0;width:50%;opacity:0.04;pointer-events:none;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:0.7rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#F59E0B;margin-bottom:20px;}
+.hero-eyebrow::before{content:'';width:28px;height:2px;background:#F59E0B;}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,3.5vw,2.9rem);color:#fff;font-weight:800;line-height:1.15;margin-bottom:18px;letter-spacing:-0.01em;}
+.hero h1 span{color:#3B82F6;}
+.hero-sub{font-size:0.97rem;color:rgba(255,255,255,0.6);line-height:1.78;margin-bottom:28px;font-weight:300;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;}
+.btn-amber{background:#F59E0B;color:var(--ink);padding:12px 26px;font-weight:600;font-size:0.86rem;border-radius:4px;text-decoration:none;transition:all 0.2s;display:inline-block;}
+.btn-amber:hover{background:#FCD34D;transform:translateY(-1px);}
+.btn-ghost{border:1.5px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);padding:11px 24px;font-size:0.86rem;border-radius:4px;text-decoration:none;transition:all 0.2s;display:inline-block;}
+.btn-ghost:hover{border-color:#F59E0B;color:#F59E0B;}
+.market-flags{display:flex;gap:10px;flex-wrap:wrap;}
+.flag{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:5px 12px;border-radius:3px;font-size:0.76rem;color:rgba(255,255,255,0.6);}
+.flag-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.flag-dot.uk{background:#EF4444;}.flag-dot.us{background:#3B82F6;}.flag-dot.ca{background:#EF4444;}
+
+/* HERO RIGHT stat grid */
+.hero-right{display:flex;flex-direction:column;gap:16px;}
+.hero-stat-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.hstat-box{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:20px 18px;border-radius:6px;}
+.hstat-num{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:#F59E0B;line-height:1;}
+.hstat-lbl{font-size:0.74rem;color:rgba(255,255,255,0.45);margin-top:5px;line-height:1.4;}
+.practice-list{background:rgba(37,99,235,0.1);border:1px solid rgba(37,99,235,0.2);padding:18px 20px;border-radius:6px;}
+.practice-list-title{font-size:0.68rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#3B82F6;margin-bottom:10px;}
+.practice-items{display:flex;flex-wrap:wrap;gap:6px;}
+.pitem{font-size:0.76rem;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.75);padding:4px 10px;border-radius:3px;}
+
+/* RIBBON */
+.ribbon{background:var(--ink-mid);padding:14px 5%;}
+.ribbon-inner{display:flex;}
+.rib-item{flex:1;text-align:center;padding:8px 10px;border-right:1px solid rgba(255,255,255,0.07);}
+.rib-item:last-child{border-right:none;}
+.rib-label{font-size:0.63rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:2px;}
+.rib-val{font-size:0.82rem;font-weight:500;color:#3B82F6;}
+
+/* SERVICES */
+.services-section{background:var(--smoke);padding:88px 5%;}
+.section-label{display:inline-flex;align-items:center;gap:10px;font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#F59E0B;margin-bottom:14px;}
+.section-label::before{content:'';width:22px;height:2px;background:#F59E0B;}
+h2.stitle{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,2.8vw,2.2rem);color:var(--ink);font-weight:800;line-height:1.2;margin-bottom:14px;}
+.stitle.light{color:#fff;}
+.ssub{font-size:0.96rem;color:var(--muted);line-height:1.75;max-width:560px;}
+.section-header{margin-bottom:48px;}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.svc-card{background:#fff;padding:32px 26px;border-bottom:3px solid transparent;transition:all 0.25s;}
+.svc-card:hover{border-bottom-color:#F59E0B;transform:translateY(-2px);}
+.svc-icon-wrap{width:42px;height:42px;background:var(--ink);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.svc-icon-wrap svg{width:20px;height:20px;stroke:#3B82F6;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.svc-card h3{font-family:'Syne',sans-serif;font-size:1.04rem;font-weight:700;color:var(--ink);margin-bottom:9px;}
+.svc-card p{font-size:0.87rem;color:var(--muted);line-height:1.72;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+.stag{font-size:0.67rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:4px 8px;background:var(--smoke);color:var(--ink);border-radius:3px;}
+
+/* WHY BCC */
+.why-section{background:#fff;padding:88px 5%;}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px;}
+.why-card{display:flex;gap:14px;padding:22px;border:1px solid rgba(11,23,38,0.07);border-radius:6px;transition:border-color 0.2s;}
+.why-card:hover{border-color:#F59E0B;}
+.why-diamond{width:10px;height:10px;background:#F59E0B;transform:rotate(45deg);flex-shrink:0;margin-top:5px;}
+.why-card h4{font-family:'Syne',sans-serif;font-size:0.96rem;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.why-card p{font-size:0.86rem;color:var(--muted);line-height:1.68;}
+
+/* CLIENTS */
+.clients-section{background:var(--ink);padding:80px 5%;}
+.client-logos{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:44px;}
+.client-tile{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);padding:26px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+.client-tile:hover{background:rgba(37,99,235,0.1);}
+.client-name{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:0.04em;text-align:center;}
+.client-sector{font-size:0.68rem;color:rgba(255,255,255,0.25);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px;}
+
+/* CERTIFICATIONS */
+.certs-section{background:var(--smoke);padding:80px 5%;}
+.certs-intro{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:start;}
+.certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.cert-card{background:#fff;border-radius:6px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;border-left:3px solid var(--electric);}
+.cert-card.amber{border-left-color:var(--amber);}
+.cert-card.green{border-left-color:#10B981;}
+.cert-icon{width:36px;height:36px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cert-icon.blue{background:rgba(37,99,235,0.1);}
+.cert-icon.amber{background:rgba(245,158,11,0.1);}
+.cert-icon.green{background:rgba(16,185,129,0.1);}
+.cert-icon svg{width:18px;height:18px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.cert-icon.blue svg{stroke:#2563EB;}
+.cert-icon.amber svg{stroke:#F59E0B;}
+.cert-icon.green svg{stroke:#10B981;}
+.cert-body{}
+.cert-name{font-family:'Syne',sans-serif;font-size:0.84rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:3px;}
+.cert-issuer{font-size:0.73rem;color:var(--muted);}
+
+/* CTA BAND */
+.cta-band{background:var(--electric);padding:68px 5%;display:flex;justify-content:space-between;align-items:center;gap:32px;}
+.cta-band h2{font-family:'Syne',sans-serif;font-size:1.8rem;color:#fff;font-weight:800;max-width:440px;line-height:1.25;}
+.cta-band-right{display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+.cta-band-right p{font-size:0.88rem;color:rgba(255,255,255,0.75);text-align:right;max-width:260px;}
+
+/* FOOTER */
+footer{background:#060E1A;padding:52px 5% 28px;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.footer-brand p{font-size:0.86rem;color:rgba(255,255,255,0.4);line-height:1.75;margin-top:14px;max-width:240px;}
+.footer-col h5{font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#F59E0B;margin-bottom:16px;}
+.footer-col a{display:block;font-size:0.83rem;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+.footer-col a:hover{color:#F59E0B;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.25);}
+.footer-mkts{font-size:0.72rem;color:#3B82F6;letter-spacing:0.06em;}
+
+@media(max-width:1024px){.hero-inner{grid-template-columns:1fr;}.hero-right{display:none;}}
+@media(max-width:900px){.nav-links{display:none;}.svc-grid{grid-template-columns:1fr 1fr;}.client-logos{grid-template-columns:repeat(2,1fr);}.why-grid{grid-template-columns:1fr;}.certs-intro{grid-template-columns:1fr;}.certs-grid{grid-template-columns:1fr;}.cta-band{flex-direction:column;}.cta-band-right{align-items:flex-start;}.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.svc-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="36" height="36">
+      <polygon points="22,2 39,11 39,33 22,42 5,33 5,11" fill="none" stroke="#2563EB" stroke-width="1.8"/>
+      <polygon points="22,8 35,15.5 35,28.5 22,36 9,28.5 9,15.5" fill="#0B1726"/>
+      <rect x="14" y="16" width="2.5" height="12" rx="1" fill="#ffffff"/>
+      <path d="M16.5 16 Q23 16 23 19.5 Q23 22 16.5 22" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      <path d="M16.5 22 Q24 22 24 25.5 Q24 28 16.5 28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      <path d="M30 18.5 Q26 18 26 22 Q26 26 30 25.5" fill="none" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+    <div class="nav-wordmark"><span class="w1">Bridge Core</span><span class="w2">Consulting Corp</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Get in Touch</a>
+</nav>
+
+<!-- HERO: two-column compact -->
+<section class="hero">
+  <svg class="hero-bg-geo" viewBox="0 0 500 800" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="250,20 480,140 480,380 250,500 20,380 20,140" fill="none" stroke="#2563EB" stroke-width="1"/>
+    <polygon points="250,80 420,170 420,330 250,420 80,330 80,170" fill="none" stroke="#2563EB" stroke-width="0.5"/>
+    <polygon points="250,140 360,200 360,300 250,360 140,300 140,200" fill="none" stroke="#F59E0B" stroke-width="0.8"/>
+    <circle cx="250" cy="260" r="40" fill="none" stroke="#F59E0B" stroke-width="0.6"/>
+    <circle cx="250" cy="260" r="80" fill="none" stroke="#2563EB" stroke-width="0.3"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">IT Consulting · Quality · Delivery · Agile</div>
+      <h1>We <span>Bridge</span> the Gap Between Strategy and Execution</h1>
+      <p class="hero-sub">Bridge Core Consulting Corp delivers specialist IT consulting services across QA, Project Management, Business Analysis, Product Ownership and Agile coaching to enterprise clients in the UK, US and Canada.</p>
+      <div class="hero-actions">
+        <a href="services.html" class="btn-amber">Explore Services</a>
+        <a href="about.html" class="btn-ghost">About Us</a>
+      </div>
+      <div class="market-flags">
+        <div class="flag"><span class="flag-dot uk"></span>United Kingdom</div>
+        <div class="flag"><span class="flag-dot us"></span>United States</div>
+        <div class="flag"><span class="flag-dot ca"></span>Canada</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat-row">
+        <div class="hstat-box"><div class="hstat-num">14+</div><div class="hstat-lbl">Years Combined Delivery Experience</div></div>
+        <div class="hstat-box"><div class="hstat-num">5</div><div class="hstat-lbl">Core IT Practice Areas</div></div>
+        <div class="hstat-box"><div class="hstat-num">3</div><div class="hstat-lbl">Global Markets Served</div></div>
+        <div class="hstat-box"><div class="hstat-num">10+</div><div class="hstat-lbl">Industry Sectors Covered</div></div>
+      </div>
+      <div class="practice-list">
+        <div class="practice-list-title">Our Practice Areas</div>
+        <div class="practice-items">
+          <span class="pitem">Quality Assurance</span>
+          <span class="pitem">Project Management</span>
+          <span class="pitem">Product Management</span>
+          <span class="pitem">Business Analysis</span>
+          <span class="pitem">Agile &amp; Scrum</span>
+          <span class="pitem">Staff Augmentation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RIBBON -->
+<div class="ribbon">
+  <div class="ribbon-inner">
+    <div class="rib-item"><div class="rib-label">Practice</div><div class="rib-val">Quality Assurance</div></div>
+    <div class="rib-item"><div class="rib-label">Practice</div><div class="rib-val">Project Management</div></div>
+    <div class="rib-item"><div class="rib-label">Practice</div><div class="rib-val">Product Management</div></div>
+    <div class="rib-item"><div class="rib-label">Practice</div><div class="rib-val">Business Analysis</div></div>
+    <div class="rib-item"><div class="rib-label">Practice</div><div class="rib-val">Agile &amp; Scrum</div></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="section-header">
+    <div class="section-label">What We Do</div>
+    <h2 class="stitle">Our Practice Areas</h2>
+    <p class="ssub">Specialist consulting services delivered by experienced practitioners, embedded in your team or leading delivery end to end.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+      <h3>Quality Assurance</h3>
+      <p>From test strategy and manual QA through to automated regression frameworks and UAT governance. Delivered across Telecom, Insurance, E-commerce and Financial Services.</p>
+      <div class="svc-tags"><span class="stag">Test Strategy</span><span class="stag">UAT</span><span class="stag">Automation</span><span class="stag">ISTQB</span></div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+      <h3>Project Management</h3>
+      <p>End to end programme delivery, stakeholder management, risk and issue governance, and PMO establishment across Agile, Waterfall and hybrid delivery models.</p>
+      <div class="svc-tags"><span class="stag">Programme Governance</span><span class="stag">PMO</span><span class="stag">SAFe</span></div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <h3>Product Management</h3>
+      <p>Product strategy, roadmap ownership, backlog prioritisation and stakeholder alignment. We help organisations build and evolve digital products with clarity and purpose.</p>
+      <div class="svc-tags"><span class="stag">Roadmap</span><span class="stag">Backlog</span><span class="stag">Product Owner</span></div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+      <h3>Business Analysis</h3>
+      <p>Requirements elicitation, process mapping, gap analysis and solution design. Our analysts translate complex business problems into clear, actionable technical specifications.</p>
+      <div class="svc-tags"><span class="stag">Requirements</span><span class="stag">Process Mapping</span><span class="stag">Gap Analysis</span></div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+      <h3>Agile &amp; Scrum</h3>
+      <p>SAFe certified Scrum Masters providing ceremony facilitation, Agile coaching, team maturity uplift and PI Planning. We embed Agile ways of working that deliver lasting results.</p>
+      <div class="svc-tags"><span class="stag">Scrum Master</span><span class="stag">SAFe 6</span><span class="stag">PI Planning</span><span class="stag">Kanban</span></div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <h3>Staff Augmentation</h3>
+      <p>Placing experienced IT consultants on contract or fixed-term engagements with enterprise clients across the UK, US and Canada. Fast, vetted and field-ready talent.</p>
+      <div class="svc-tags"><span class="stag">Contract</span><span class="stag">Embedded Teams</span><span class="stag">Multi-market</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY BCC -->
+<section class="why-section">
+  <div class="section-label">Why Bridge Core</div>
+  <h2 class="stitle">The Bridge Core Difference</h2>
+  <p class="ssub">We are a consulting firm built on practitioner expertise. Every engagement is led by someone who has done the work, not just managed it.</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-diamond"></div><div><h4>Cross-Border Expertise</h4><p>Deep understanding of enterprise IT environments in the UK, US and Canada, including regulatory nuances, team cultures and delivery expectations.</p></div></div>
+    <div class="why-card"><div class="why-diamond"></div><div><h4>Practitioners, Not Theorists</h4><p>Our consultants bring hands-on experience from Telecom, Insurance, E-commerce, Retail, Legal and Media, not just certifications and slide decks.</p></div></div>
+    <div class="why-card"><div class="why-diamond"></div><div><h4>Full Delivery Lifecycle</h4><p>From requirements through to release, we cover every phase of delivery and flex our engagement model to match what you actually need.</p></div></div>
+    <div class="why-card"><div class="why-diamond"></div><div><h4>Modern Tech Fluency</h4><p>Proficient in Jira, Confluence, Power BI, Salesforce, AWS, Microservices, CI/CD, REST APIs and the tools that power modern enterprise IT.</p></div></div>
+    <div class="why-card"><div class="why-diamond"></div><div><h4>SAFe and Agile Certified</h4><p>SAFe 6 Practitioners, certified Scrum Masters and Product Owners who lead transformations and embed Agile ways of working that deliver real outcomes.</p></div></div>
+    <div class="why-card"><div class="why-diamond"></div><div><h4>Data-Driven Outcomes</h4><p>We focus on measurable results: reduced defect rates, faster time to market, improved user adoption and quantifiable business value.</p></div></div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients-section">
+  <div class="section-label">Our Track Record</div>
+  <h2 class="stitle light">Clients and Sectors We Have Served</h2>
+  <p style="font-size:0.93rem;color:rgba(255,255,255,0.5);line-height:1.7;max-width:500px;margin-top:8px;">Our consultants have delivered complex programmes for leading organisations across multiple industries.</p>
+  <div class="client-logos">
+    <div class="client-tile"><div><div class="client-name">Bell Canada</div><div class="client-sector">Telecom</div></div></div>
+    <div class="client-tile"><div><div class="client-name">CDW</div><div class="client-sector">IT Solutions</div></div></div>
+    <div class="client-tile"><div><div class="client-name">Swinton Insurance</div><div class="client-sector">Insurance</div></div></div>
+    <div class="client-tile"><div><div class="client-name">BBC Future Media</div><div class="client-sector">Media &amp; Broadcasting</div></div></div>
+    <div class="client-tile"><div><div class="client-name">Laterooms.com</div><div class="client-sector">E-commerce / Travel</div></div></div>
+    <div class="client-tile"><div><div class="client-name">Redpico</div><div class="client-sector">Legal Tech / SaaS</div></div></div>
+    <div class="client-tile"><div><div class="client-name">Kewill</div><div class="client-sector">Retail / Logistics</div></div></div>
+    <div class="client-tile"><div><div class="client-name">Firmex</div><div class="client-sector">Legal / Finance</div></div></div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certs-section">
+  <div class="certs-intro">
+    <div>
+      <div class="section-label">Credentials</div>
+      <h2 class="stitle">Industry Certifications and Accreditations</h2>
+      <p class="ssub">Our team holds certifications across Agile delivery, cloud platforms, AI and software quality, covering the full range of modern enterprise IT disciplines.</p>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-icon blue"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <div class="cert-body"><div class="cert-name">SAFe 6 Practitioner</div><div class="cert-issuer">Scaled Agile Inc.</div></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div class="cert-body"><div class="cert-name">Scrum Master Certified</div><div class="cert-issuer">International Scrum Institute</div></div>
+      </div>
+      <div class="cert-card amber">
+        <div class="cert-icon amber"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="cert-body"><div class="cert-name">Azure AI Fundamentals</div><div class="cert-issuer">Microsoft Certified</div></div>
+      </div>
+      <div class="cert-card amber">
+        <div class="cert-icon amber"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+        <div class="cert-body"><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services</div></div>
+      </div>
+      <div class="cert-card green">
+        <div class="cert-icon green"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="cert-body"><div class="cert-name">ISTQB Advanced Test Management</div><div class="cert-issuer">ISTQB Foundation &amp; Advanced</div></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon blue"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="cert-body"><div class="cert-name">Scrum Product Owner Certified</div><div class="cert-issuer">International Scrum Institute</div></div>
+      </div>
+      <div class="cert-card amber">
+        <div class="cert-icon amber"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <div class="cert-body"><div class="cert-name">Google Cloud Associate Engineer</div><div class="cert-issuer">Google Cloud</div></div>
+      </div>
+      <div class="cert-card green">
+        <div class="cert-icon green"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+        <div class="cert-body"><div class="cert-name">Microsoft AI-900 Azure AI</div><div class="cert-issuer">Microsoft Certified</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <h2>Ready to Bridge the Gap?</h2>
+  <div class="cta-band-right">
+    <p>Tell us about your challenge and we will match you with the right consultant within 48 hours.</p>
+    <a href="contact.html" class="btn-amber">Start a Conversation</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="40" height="40">
+        <polygon points="22,2 39,11 39,33 22,42 5,33 5,11" fill="none" stroke="#2563EB" stroke-width="1.8"/>
+        <polygon points="22,8 35,15.5 35,28.5 22,36 9,28.5 9,15.5" fill="#0B1726"/>
+        <rect x="14" y="16" width="2.5" height="12" rx="1" fill="#ffffff"/>
+        <path d="M16.5 16 Q23 16 23 19.5 Q23 22 16.5 22" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        <path d="M16.5 22 Q24 22 24 25.5 Q24 28 16.5 28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        <path d="M30 18.5 Q26 18 26 22 Q26 26 30 25.5" fill="none" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <p>Specialist IT consulting across Quality Assurance, Project Management, Business Analysis, Product and Agile, serving enterprise clients in the UK, US and Canada.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <a href="services.html">Quality Assurance</a>
+      <a href="services.html">Project Management</a>
+      <a href="services.html">Product Management</a>
+      <a href="services.html">Business Analysis</a>
+      <a href="services.html">Agile &amp; Scrum</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h5>Markets</h5>
+      <a href="#">United Kingdom</a>
+      <a href="#">United States</a>
+      <a href="#">Canada</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2025 Bridge Core Consulting Corp. All rights reserved.</div>
+    <div class="footer-mkts">UK &nbsp;&middot;&nbsp; US &nbsp;&middot;&nbsp; Canada</div>
+  </div>
+</footer>
+</body>
+</html>

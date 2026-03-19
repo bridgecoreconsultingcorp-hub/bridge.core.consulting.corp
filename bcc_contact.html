@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact Us Bridge Core Consulting Corp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0B1726;--ink-mid:#152238;--electric:#2563EB;--electric-lt:#3B82F6;--amber:#F59E0B;--smoke:#F1F5FB;--muted:#64748B;--white:#FFFFFF;--text:#1E293B;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;}
+nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(11,23,38,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(37,99,235,0.2);height:64px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-wordmark .w1{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#fff;letter-spacing:0.04em;display:block;}
+.nav-wordmark .w2{font-size:0.6rem;color:#3B82F6;letter-spacing:0.18em;text-transform:uppercase;margin-top:1px;display:block;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.82rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:#F59E0B;}
+.nav-cta{background:var(--electric);color:#fff;padding:9px 22px;text-decoration:none;font-size:0.8rem;border-radius:4px;}
+
+.page-header{background:var(--ink);padding:128px 5% 72px;position:relative;overflow:hidden;}
+.page-header::after{content:'CONTACT';position:absolute;right:3%;bottom:-28px;font-family:'Syne',sans-serif;font-size:7.5rem;font-weight:800;color:rgba(255,255,255,0.03);line-height:1;}
+.breadcrumb{font-size:0.72rem;color:rgba(255,255,255,0.35);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;}
+.breadcrumb a{color:#F59E0B;text-decoration:none;}
+.page-header h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);color:#fff;font-weight:800;line-height:1.15;}
+.page-header h1 span{color:#3B82F6;}
+.page-header p{color:rgba(255,255,255,0.55);font-size:1.05rem;margin-top:16px;max-width:520px;line-height:1.72;font-weight:300;}
+
+.section-label{display:inline-flex;align-items:center;gap:10px;font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#F59E0B;margin-bottom:14px;}
+.section-label::before{content:'';width:22px;height:2px;background:#F59E0B;}
+
+/* CONTACT SPLIT */
+.contact-body{display:grid;grid-template-columns:1fr 1.5fr;}
+.contact-info{background:var(--ink);padding:64px 5%;}
+.contact-info h2{font-family:'Syne',sans-serif;font-size:1.6rem;color:#fff;font-weight:800;margin-bottom:14px;}
+.contact-info > p{font-size:0.92rem;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:44px;}
+.cinfo-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;}
+.cinfo-icon{width:40px;height:40px;background:rgba(255,255,255,0.05);border:1px solid rgba(37,99,235,0.3);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cinfo-icon svg{width:18px;height:18px;stroke:#3B82F6;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.cinfo-label{font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:3px;}
+.cinfo-val{font-size:0.92rem;color:#fff;}
+.cinfo-val a{color:#fff;text-decoration:none;}
+.cinfo-val a:hover{color:var(--amber);}
+.avail-box{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);padding:18px 20px;border-radius:6px;margin-top:36px;}
+.avail-dot{display:inline-block;width:8px;height:8px;background:#22C55E;border-radius:50%;margin-right:8px;box-shadow:0 0 0 3px rgba(34,197,94,0.2);}
+.avail-box p{font-size:0.86rem;color:rgba(255,255,255,0.7);line-height:1.6;}
+.avail-box strong{color:var(--amber);}
+.market-boxes{display:flex;flex-direction:column;gap:8px;margin-top:36px;}
+.mkt{display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:4px;}
+.mkt-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.mkt h4{font-size:0.86rem;font-weight:600;color:#fff;}
+.mkt p{font-size:0.75rem;color:rgba(255,255,255,0.4);}
+
+/* FORM */
+.contact-form-wrap{background:var(--smoke);padding:64px 5%;}
+.contact-form-wrap h2{font-family:'Syne',sans-serif;font-size:1.6rem;color:var(--ink);font-weight:800;margin-bottom:6px;}
+.contact-form-wrap .sub{font-size:0.9rem;color:var(--muted);margin-bottom:36px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);margin-bottom:7px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;background:#fff;border:1.5px solid rgba(11,23,38,0.1);font-family:'DM Sans',sans-serif;font-size:0.94rem;color:var(--text);border-radius:4px;outline:none;transition:border-color 0.2s;appearance:none;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--electric);}
+.form-group textarea{min-height:116px;resize:vertical;}
+.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
+.consent-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:24px;}
+.consent-row input[type="checkbox"]{margin-top:3px;accent-color:var(--electric);width:15px;height:15px;flex-shrink:0;}
+.consent-row span{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.btn-submit{width:100%;background:var(--ink);color:#fff;padding:15px 32px;border:none;font-family:'Syne',sans-serif;font-size:0.92rem;font-weight:700;letter-spacing:0.06em;border-radius:4px;cursor:pointer;transition:background 0.2s;}
+.btn-submit:hover{background:var(--ink-mid);}
+.form-note{font-size:0.76rem;color:var(--muted);text-align:center;margin-top:10px;}
+#form-success{display:none;text-align:center;padding:48px 24px;}
+#form-success .si{width:60px;height:60px;background:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+#form-success .si svg{width:28px;height:28px;stroke:var(--amber);fill:none;stroke-width:2.2;stroke-linecap:round;}
+#form-success h3{font-family:'Syne',sans-serif;font-size:1.4rem;color:var(--ink);font-weight:800;margin-bottom:10px;}
+#form-success p{font-size:0.95rem;color:var(--muted);line-height:1.72;}
+
+/* FAQ */
+.faq-section{background:#fff;padding:80px 5%;}
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 56px;margin-top:44px;}
+.faq-item{border-top:2px solid var(--smoke);padding-top:20px;}
+.faq-q{font-family:'Syne',sans-serif;font-size:0.96rem;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.faq-a{font-size:0.88rem;color:var(--muted);line-height:1.72;}
+
+footer{background:#060E1A;padding:52px 5% 28px;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.footer-brand p{font-size:0.88rem;color:rgba(255,255,255,0.4);line-height:1.75;margin-top:14px;max-width:240px;}
+.footer-col h5{font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#F59E0B;margin-bottom:16px;}
+.footer-col a{display:block;font-size:0.84rem;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+.footer-col a:hover{color:#F59E0B;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;display:flex;justify-content:space-between;}
+.footer-copy{font-size:0.76rem;color:rgba(255,255,255,0.25);}
+.footer-mkts{font-size:0.72rem;color:#3B82F6;}
+@media(max-width:900px){.nav-links{display:none;}.contact-body{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.faq-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.page-header::after{display:none;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="36" height="36"><polygon points="22,2 39,11 39,33 22,42 5,33 5,11" fill="none" stroke="#2563EB" stroke-width="1.8"/><polygon points="22,8 35,15.5 35,28.5 22,36 9,28.5 9,15.5" fill="#0B1726"/><rect x="14" y="16" width="2.5" height="12" rx="1" fill="#ffffff"/><path d="M16.5 16 Q23 16 23 19.5 Q23 22 16.5 22" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/><path d="M16.5 22 Q24 22 24 25.5 Q24 28 16.5 28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/><path d="M30 18.5 Q26 18 26 22 Q26 26 30 25.5" fill="none" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round"/></svg>
+    <div class="nav-wordmark"><span class="w1">Bridge Core</span><span class="w2">Consulting Corp</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Get in Touch</a>
+</nav>
+
+<div class="page-header">
+  <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact Us</div>
+  <h1>Let's Start a<br><span>Conversation</span></h1>
+  <p>Every engagement begins with a straightforward conversation. Tell us about your programme and we'll respond within one business day.</p>
+</div>
+
+<!-- CONTACT SPLIT -->
+<div class="contact-body">
+  <div class="contact-info">
+    <div class="section-label">Reach Us</div>
+    <h2>Get in Touch</h2>
+    <p>We work with enterprise clients across the UK, US and Canada. Whether you have a live programme need or are exploring options for the future we're happy to talk.</p>
+
+    <div class="cinfo-item">
+      <div class="cinfo-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div><div class="cinfo-label">Email</div><div class="cinfo-val"><a href="mailto:hello@bridgecoreconsulting.com">hello@bridgecoreconsulting.com</a></div></div>
+    </div>
+    <div class="cinfo-item">
+      <div class="cinfo-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div><div class="cinfo-label">Response Time</div><div class="cinfo-val">Within 1 business day</div></div>
+    </div>
+    <div class="cinfo-item">
+      <div class="cinfo-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div><div class="cinfo-label">Base Location</div><div class="cinfo-val">Ontario, Canada<br><span style="font-size:0.78rem;color:rgba(255,255,255,0.4);">Remote &amp; on site globally</span></div></div>
+    </div>
+
+    <div class="avail-box"><p><span class="avail-dot"></span><strong>Currently accepting new engagements.</strong> We have availability for both embedded and advisory engagements from Q3 2025.</p></div>
+
+    <div class="market-boxes">
+      <div class="mkt"><div class="mkt-dot" style="background:#EF4444;"></div><div><h4>United Kingdom</h4><p>Manchester · London · Remote</p></div></div>
+      <div class="mkt"><div class="mkt-dot" style="background:#3B82F6;"></div><div><h4>United States</h4><p>Remote delivery · EST / PST</p></div></div>
+      <div class="mkt"><div class="mkt-dot" style="background:#EF4444;"></div><div><h4>Canada</h4><p>Toronto · Mississauga · Remote</p></div></div>
+    </div>
+  </div>
+
+  <div class="contact-form-wrap">
+    <h2>Send an Enquiry</h2>
+    <p class="sub">Complete the form and we'll get back to you within one business day.</p>
+    <form id="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="e.g. Sarah" required></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="e.g. Mitchell" required></div>
+      </div>
+      <div class="form-group"><label>Work Email</label><input type="email" placeholder="you@company.com" required></div>
+      <div class="form-group"><label>Organisation</label><input type="text" placeholder="Company name"></div>
+      <div class="form-row">
+        <div class="form-group"><label>Market / Region</label>
+          <select><option value="" disabled selected>Select region</option><option>United Kingdom</option><option>United States</option><option>Canada</option><option>Other</option></select>
+        </div>
+        <div class="form-group"><label>Service Required</label>
+          <select><option value="" disabled selected>Select a service</option><option>Quality Assurance</option><option>Project Management</option><option>Product Management</option><option>Business Analysis</option><option>Agile &amp; Scrum</option><option>Staff Augmentation</option><option>General Enquiry</option></select>
+        </div>
+      </div>
+      <div class="form-group"><label>Tell Us About Your Challenge</label>
+        <textarea placeholder="Describe your programme, current challenges, and what kind of support you're looking for..."></textarea>
+      </div>
+      <div class="form-group"><label>Preferred Start Date</label>
+        <select><option value="" disabled selected>When do you need support?</option><option>As soon as possible</option><option>Within 2 weeks</option><option>Within 1 month</option><option>1–3 months</option><option>3–6 months</option><option>Just exploring options</option></select>
+      </div>
+      <div class="consent-row">
+        <input type="checkbox" required>
+        <span>I agree to be contacted about this enquiry. My details will not be shared with third parties or used for unsolicited marketing.</span>
+      </div>
+      <button type="submit" class="btn-submit">Send Enquiry</button>
+      <p class="form-note">No obligation. All enquiries are handled personally and confidentially.</p>
+    </form>
+    <div id="form-success">
+      <div class="si"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h3>Enquiry Received</h3>
+      <p>Thank you for reaching out to Bridge Core Consulting Corp. We'll review your message and respond within one business day.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-label">Common Questions</div>
+  <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.6rem,2.8vw,2.2rem);color:var(--ink);font-weight:800;margin-bottom:8px;">Frequently Asked Questions</h2>
+  <div class="faq-grid">
+    <div class="faq-item"><div class="faq-q">Do you work remotely or on site?</div><div class="faq-a">Both. Our consultants are based in Canada (Ontario) and have delivered remotely for clients in the UK, US and Canada. On-site engagements are available depending on location and requirements.</div></div>
+    <div class="faq-item"><div class="faq-q">What size organisations do you work with?</div><div class="faq-a">Primarily mid-market to enterprise organisations running complex IT programmes across multiple teams or geographies. We've worked with major Telcos, Insurance firms, Media companies and SaaS businesses.</div></div>
+    <div class="faq-item"><div class="faq-q">How quickly can you start an engagement?</div><div class="faq-a">For advisory and fixed scope engagements, we can typically start within two weeks. For embedded consulting roles, allow three to four weeks from agreement to kick-off.</div></div>
+    <div class="faq-item"><div class="faq-q">Can you provide multiple consultants?</div><div class="faq-a">Yes. Bridge Core has a network of experienced IT professionals. For programmes requiring multiple disciplines simultaneously e.g. BA plus QA plus Scrum Master we can assemble a team.</div></div>
+    <div class="faq-item"><div class="faq-q">Do you work inside SAFe environments?</div><div class="faq-a">Absolutely. Our senior consultants are SAFe 6 certified and have led PI Planning, managed ARTs, and operated as Lead Product Owners within large SAFe programmes at Bell Canada and CDW.</div></div>
+    <div class="faq-item"><div class="faq-q">What sectors do you specialise in?</div><div class="faq-a">Telecom, Insurance, E-commerce, Legal Tech, Media and SaaS based on real project delivery experience. We also work across Retail, Financial Services and Public Sector.</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="40" height="40"><polygon points="22,2 39,11 39,33 22,42 5,33 5,11" fill="none" stroke="#2563EB" stroke-width="1.8"/><polygon points="22,8 35,15.5 35,28.5 22,36 9,28.5 9,15.5" fill="#0B1726"/><rect x="14" y="16" width="2.5" height="12" rx="1" fill="#ffffff"/><path d="M16.5 16 Q23 16 23 19.5 Q23 22 16.5 22" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/><path d="M16.5 22 Q24 22 24 25.5 Q24 28 16.5 28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/><path d="M30 18.5 Q26 18 26 22 Q26 26 30 25.5" fill="none" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <p>Specialist IT consulting across QA, Project Management, Business Analysis, Product and Agile UK, US and Canada.</p>
+    </div>
+    <div class="footer-col"><h5>Services</h5><a href="services.html">Quality Assurance</a><a href="services.html">Project Management</a><a href="services.html">Product Management</a><a href="services.html">Business Analysis</a><a href="services.html">Agile &amp; Scrum</a></div>
+    <div class="footer-col"><h5>Company</h5><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h5>Markets</h5><a href="#">United Kingdom</a><a href="#">United States</a><a href="#">Canada</a></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2025 Bridge Core Consulting Corp. All rights reserved.</div>
+    <div class="footer-mkts">UK · US · Canada</div>
+  </div>
+</footer>
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  document.getElementById('contact-form').style.display='none';
+  document.getElementById('form-success').style.display='block';
+}
+</script>
+</body>
+</html>
